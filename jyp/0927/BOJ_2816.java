@@ -1,13 +1,13 @@
 import java.io.*;
 import java.util.*;
 public class BOJ_2816 {
-    public static List<String>chanleList = new ArrayList<>();
+    public static List<String>channelList = new ArrayList<>();
     public static List<String>moveList = new ArrayList<>();
 
     public static int find_kbs_index(int numberOfchanel, String target){
         int index = 0;
         for(; index<numberOfchanel; index++){        
-            if(chanleList.get(index).equals(target)){
+            if(channelList.get(index).equals(target)){
                 break;
             }
             moveList.add("1");
@@ -15,9 +15,9 @@ public class BOJ_2816 {
         return index;
     }
     public static void swap(int a, int b){
-        String temp = chanleList.get(a);
-        chanleList.set(a, chanleList.get(b));
-        chanleList.set(b, temp);
+        String temp = channelList.get(a);
+        channelList.set(a, channelList.get(b));
+        channelList.set(b, temp);
     }
     public static void move_kbs_index(int index, int target){
         for(int i= index; i>target; i--){
@@ -33,7 +33,7 @@ public class BOJ_2816 {
         int numberOfchanel = Integer.parseInt(input);
 
         for(int i=0; i<numberOfchanel; i++)
-            chanleList.add(br.readLine());
+            channelList.add(br.readLine());
 
         // 2단계로 나눠서 진행 
         // STEP1. KBS1을 찾고 해당 채널을 맨위로 끌어 올림(맨 끝이라 생각해도 200번)
